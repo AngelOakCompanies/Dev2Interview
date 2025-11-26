@@ -1,0 +1,14 @@
+{
+  "name": "dev2interview",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start:debug": "npm run build && node --enable-source-maps dist/index.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^22.x",
+    "typescript": "^4.3.5"
+  }
+}
