@@ -1,5 +1,5 @@
 import { WordMetadata } from "../interfaces";
-import { getCurrentTimestamp } from "./helpers";
+import { getCurrentTimestamp } from "../helpers";
 
 export const updateWordMetadata = (metadata: WordMetadata) => {
   return {

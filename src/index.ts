@@ -1,5 +1,6 @@
 import { generateWordsReport } from "./generateWordsReport";
-import { WordMetadata } from "./interfaces";
+import { WordMetadata, WordsCollection } from "./interfaces";
+import { saveCollectionToFile } from "./saveCollectionToFile";
 import * as utils from "./utils";
 import { normalizeWord, wordFilter } from "./word";
 import { createWordMetadata, updateWordMetadata } from "./word-metadata";
@@ -22,5 +23,13 @@ import { createWordMetadata, updateWordMetadata } from "./word-metadata";
   const wordsReport = generateWordsReport(wordsMetadata);
 
   // exporting
-  console.log({ words, wordsMetadata, wordsReport });
+  const wordsCollection: WordsCollection = {
+    words: words,
+    metadata: wordsMetadata,
+    report: wordsReport,
+  };
+
+  console.log(wordsCollection);
+
+  saveCollectionToFile(wordsCollection);
 })();

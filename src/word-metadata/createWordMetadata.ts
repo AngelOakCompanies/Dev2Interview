@@ -1,4 +1,4 @@
-import { getCurrentTimestamp } from "./helpers";
+import { getCurrentTimestamp } from "../helpers";
 
 export const createWordMetadata = (word: string) => {
   const currentTime = getCurrentTimestamp();
@@ -33,3 +33,5 @@ const getCharacterCounts = (
     consonantCount,
   };
 };
+
+const checkIsPalindrome = () => {};
