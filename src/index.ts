@@ -10,7 +10,7 @@ import { createWordMetadata, updateWordMetadata } from "./word-metadata";
   const words = await utils.fetchRandomWords(5);
   words.map(normalizeWord).filter(wordFilter);
 
-  // generate metadata
+  // metadata generation
   const wordsMetadata: Record<string, WordMetadata> = {};
   words.forEach((word) => {
     wordsMetadata[word] =
@@ -19,10 +19,10 @@ import { createWordMetadata, updateWordMetadata } from "./word-metadata";
         : createWordMetadata(word);
   });
 
-  // reporting
+  // report generation
   const wordsReport = generateWordsReport(wordsMetadata);
 
-  // exporting
+  // exporting reports
   const wordsCollection: WordsCollection = {
     words: words,
     metadata: wordsMetadata,

@@ -3,6 +3,7 @@ import { getCurrentTimestamp } from "../helpers";
 export const createWordMetadata = (word: string) => {
   const currentTime = getCurrentTimestamp();
   const { vowelCount, consonantCount } = getCharacterCounts(word);
+  const isPalindrome = checkIsPalindrome(word);
 
   return {
     count: 1,
@@ -10,6 +11,7 @@ export const createWordMetadata = (word: string) => {
     lastSeen: currentTime,
     vowelCount,
     consonantCount,
+    isPalindrome,
   };
 };
 
@@ -34,4 +36,13 @@ const getCharacterCounts = (
   };
 };
 
-const checkIsPalindrome = () => {};
+const checkIsPalindrome = (word: string) => {
+  for (let i = 0; i < Math.floor(word.length / 2); i++) {
+    const charStart = word[i];
+    const charEnd = word[word.length - 1 - i];
+
+    if (charStart !== charEnd) return false;
+  }
+
+  return true;
+};
