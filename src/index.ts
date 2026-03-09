@@ -29,7 +29,5 @@ import { createWordMetadata, updateWordMetadata } from "./word-metadata";
     report: wordsReport,
   };
 
-  console.log(wordsCollection);
-
   saveCollectionToFile(wordsCollection);
 })();
