@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
+    "test": "tsc && node ./dist/index.js",
     "build": "tsc",
     "start:debug": "npm run build && node --enable-source-maps dist/index.js"
   },
