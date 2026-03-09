@@ -1,5 +1,10 @@
 import { WordMetadata, WordsReport } from "./interfaces";
 
+/**
+ * Generates a report with most/least frequent words
+ * @param wordsMetadata an object keyed by words containing metadata
+ * @returns a report of most and lest frequently seen words
+ */
 export const generateWordsReport = (
   wordsMetadata: Record<string, WordMetadata>,
 ): WordsReport => {
